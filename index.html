@@ -1,0 +1,41 @@
+<head>
+    <script type="text/javascript" src="https://7f1a30dd76a8.eu-west-3.captcha-sdk.awswaf.com/7f1a30dd76a8/jsapi.js" defer></script>
+</head>
+
+<script type="text/javascript">
+    function showMyCaptcha() {
+        var container = document.querySelector("#my-captcha-container");
+        
+        AwsWafCaptcha.renderCaptcha(container, {
+            apiKey: "...API key goes here... // ato ilay API KEY no apetraka // window.WAF_API_KEY = "api_key"",
+            onSuccess: captchaExampleSuccessFunction,
+            onError: captchaExampleErrorFunction,
+            //...other configuration parameters as needed...
+        });
+    }
+    
+    function captchaExampleSuccessFunction(wafToken) {
+        // Use WAF token to access protected resources
+        AwsWafIntegration.fetch("...WAF-protected URL...", {
+            method: "POST",
+            ...
+        });
+    }
+    
+    function captchaExampleErrorFunction(error) {
+        /* Do something with the error */
+    }
+</script>
+
+<body id="my-captcha-container">
+    <!-- The contents of this container will be replaced by the captcha widget -->
+     <button onclick="showMyCaptcha()">
+        Show my captcha
+     </button>
+     <!--makao am Application integration integration de copiena ilay script type text/javascript , 
+     """python -m http.server""" manome port : 
+     """ngrok http 8000""""
+     API KEY apande anle captcha -> Application integration : générer API key
+    apetaka ao am aws amplify : echo "window.WAF_API_KEY = '${WAF_API_KEY}'" > config.js
+     -->
+</body>
