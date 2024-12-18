@@ -1,13 +1,15 @@
 <head>
     <script type="text/javascript" src="https://7f1a30dd76a8.eu-west-3.captcha-sdk.awswaf.com/7f1a30dd76a8/jsapi.js" defer></script>
+    <script src="config.js" defer></script>
 </head>
 
 <script type="text/javascript">
     function showMyCaptcha() {
         var container = document.querySelector("#my-captcha-container");
+        const ApiKey = window.WAF_API_KEY
         
         AwsWafCaptcha.renderCaptcha(container, {
-            apiKey: "k2SAjA1xNTB2fqpnR6IJ39+98TA5ej0lUIsDQ3cx/9gJTGsBnqlKfHPFMEW6F5HK8A2XJ8VP9VkGPmea2lai/7E1yb5Lw0tLDjZq4WJExgcKkbpsNgq1MrmPAeOknxfFKCPoixE8Lja0QcQQCixvu1xkxfhMlfI3dKDI2neBas2RR0G3IejkJf+W3vvoU4U1j9snNn260uFI3dS7UDJ2iXrFdFHXOB2uDli/OALnQxajjJYGSph5Rnmy4YwJT5C+M1PIy2SyVki6kDsi04KjfhsdB/ygFTTgyyCrkCJrBiJAOjzz/qvQ4RT65AwWqgSDgK+NVWqu9jiC924FMtxXpB6bjkKVm+r/Jss7Pvc8zM2iaQmBSbKkuKWuUwpZhqrOBFrMX/kYkn45Q0hSysRTYsoIeuAYQy6yL1WzGPTc7RE4qybuITsYiCfDQ+Fwkrpa2jH+eqdsbR93VBQN1hQRsbtjWPMSdrN3Pe27WBgwn+7qEdXRRJzojIVGRMdXIigjz+ECg890gOEfdFJ93K3U59CiGPVUuiO5ZxvVDX34pRjFuBRzNd7aBXGsruXbL9MrENhtF3wsGISSCRGF22pzzqNarR589D7mf8gy+EwNjgE2tz5s4+0/lhcE3bzoFQkwdz93c52ByextXf4AFglgseRZc8v46r8gnvNR9qtTlzM=_0_1",
+            apiKey: ApiKey,
             onSuccess: captchaExampleSuccessFunction,
             onError: captchaExampleErrorFunction,
             //...other configuration parameters as needed...
